@@ -122,15 +122,15 @@ export default function Write(props) {
         <div className="write">
             <h1 className="write__title">Write</h1>
             <div className="prompt-container">
-                <p>Your prompt is: <span className="span">"{shownPrompt}"</span></p>
+                <p>Your prompt is: <span className="span span--bold">"{shownPrompt}"</span></p>
             </div>
             <div className="main-container">
             <form className="write-form" onSubmit={handleSubmit}>
-                <input type="text" name="promptTitle" id="" className="write-form__title" placeholder="Your title here"/>
+                <input type="text" name="promptTitle" id="" className="write-form__title" placeholder="Title here"/>
                 <textarea name="promptContent" id="" className="write-form__content" placeholder="Write here"></textarea>
                 <div className="send-wrapper">
                     <input className="send-wrapper__name" type="text" name="name" id="" placeholder="Name, pen or otherwise"/>
-                    <input className="send-wrapper__email" type="email" name="email" id="" placeholder="adam.murad@example.com" required/>
+                    <input className="send-wrapper__email" type="email" name="email" id="" placeholder="johndoe123@example.com" required/>
                     <button type="submit" className="button">Save this!</button>
                 </div>
             </form>

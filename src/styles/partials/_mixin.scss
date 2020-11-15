@@ -65,3 +65,16 @@
         border: 2px $pink solid;
     }
 }
+//bottom border
+@mixin bottom-border {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        border-bottom: $purple 1px solid;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+    }
+}

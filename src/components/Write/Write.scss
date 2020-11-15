@@ -10,7 +10,18 @@
     margin: 0 auto;
 
     &__title {
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            border-bottom: $purple 1px solid;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
     }
 }
 
@@ -39,7 +50,10 @@
 }
 
 .prompt-container {
+    padding-bottom: 1rem;
     margin-bottom: 2rem;
+
+    @include bottom-border;
 }
 
 .button-container {
@@ -60,4 +74,8 @@
         @include input;
         margin-right: 2rem;
     }
+}
+
+.span--bold {
+    font-weight: bold;
 }
