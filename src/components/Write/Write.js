@@ -135,9 +135,9 @@ export default function Write(props) {
                 </div>
             </form>
             <div className="button-container">
-                <button className="button" onClick={handleEnglish} disabled={languageEn}>English</button>
-                <button className="button"onClick={handleMalay} disabled={languageMy}>Malay</button>
-                <button className="button"onClick={handleFrench} disabled={languageFr}>French</button>
+                <button className="button button--lang" onClick={handleEnglish} disabled={languageEn}>English</button>
+                <button className="button button--lang"onClick={handleMalay} disabled={languageMy}>Malay</button>
+                <button className="button button--lang"onClick={handleFrench} disabled={languageFr}>French</button>
             </div>
             </div>
         </div>

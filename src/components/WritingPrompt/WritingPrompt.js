@@ -116,11 +116,11 @@ export default function WritingPrompt() {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <Link to={`/write/${data.data.id}`}>
-                                        <button className="button button--write">Write Now</button>
-                                    </Link>
-                                </div>
+
+                                <Link to={`/write/${data.data.id}`}>
+                                    <button className="button button--write">Write Now</button>
+                                </Link>
+
                             </div>
                         )
                     }

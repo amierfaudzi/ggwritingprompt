@@ -28,7 +28,11 @@
 .write-form {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
+    
+    @include tablet {
+        width: 70%;
+    }
 
     &__title {
         @include input;
@@ -46,6 +50,11 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    flex-direction: column-reverse;
+
+    @include tablet {
+        flex-direction: row;
+    }
 
 }
 
@@ -58,24 +67,43 @@
 
 .button-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include tablet {
+        flex-direction: column;
+    }
 }
 
 .send-wrapper {
     
     &__name {
+        width: 100%;
         @include input;
-        margin-right: 2rem;
+        @include tablet {
+            margin-right: 2rem;
+            width: 40%;
+        }
     }
 
     &__email {
+        width: 100%;
         @include input;
-        margin-right: 2rem;
+        @include tablet {
+            margin-right: 2rem;
+            width: 40%;
+        }
     }
 }
 
 .span--bold {
     font-weight: bold;
+}
+
+.button--lang {
+    width: 30vw;
+
+    @include tablet {
+        width: 104px;
+    }
 }

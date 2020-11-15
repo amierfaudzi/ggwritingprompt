@@ -12,8 +12,13 @@
     border-radius: 8px;
     padding: 1rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    @include tablet {
+        flex-direction: row;
+    }
 
     box-shadow: 2px 2px 2px 2px $primary-blue;
 
@@ -27,8 +32,15 @@
 }
 
 .button--write {
-    height: 104px;
+
+    height: 2rem;
+    width: 60vw;
     margin-bottom: 0;
+    
+    @include tablet {
+        width: 104px;
+        height: 104px;
+    }
 }
 
 .column-wrapper {
@@ -40,13 +52,25 @@
 
 .ups-date-wrapper {
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+    }
 }
 
 .extra-info {
-    margin-right: 1rem;
-    display: flex;
-    align-items: baseline;
+    margin-bottom: 1rem;
+
+    @include tablet {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        display: flex;
+        align-items: baseline;
+    }
 }
 
 .icon {
