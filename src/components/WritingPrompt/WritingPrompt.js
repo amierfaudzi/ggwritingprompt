@@ -107,16 +107,20 @@ export default function WritingPrompt() {
                     if(!data.data.selftext){
                         return (
                             <div key={data.data.id} className="prompt" id={data.data.id}>
-                                <div className="column-wrapper">
-                                    <p className="prompt__content">The prompts: <span className="prompt__title">"{data.data.title.substring(5)}"</span></p>
-                                    <div className="ups-date-wrapper">
-                                    <p className="extra-info">Upvotes: <Upvote className="icon"/><strong>{data.data.ups}</strong></p>
-                                    <p className="extra-info">Created at: <Time className="icon"/><strong>{timeConverterFunction(data.data.created_utc)}</strong></p>
+                                <div className="centering-container">
+                                    <div className="column-wrapper">
+                                        <p className="prompt__content">The prompts: <span className="prompt__title">"{data.data.title.substring(5)}"</span></p>
+                                        <div className="ups-date-wrapper">
+                                        <p className="extra-info">Upvotes: <Upvote className="icon"/><strong>{data.data.ups}</strong></p>
+                                        <p className="extra-info">Created at: <Time className="icon"/><strong>{timeConverterFunction(data.data.created_utc)}</strong></p>
+                                        </div>
                                     </div>
                                 </div>
-                                <Link to={`/write/${data.data.id}`}>
-                                    <button className="button button--write">Write Now</button>
-                                </Link>
+                                <div>
+                                    <Link to={`/write/${data.data.id}`}>
+                                        <button className="button button--write">Write Now</button>
+                                    </Link>
+                                </div>
                             </div>
                         )
                     }
