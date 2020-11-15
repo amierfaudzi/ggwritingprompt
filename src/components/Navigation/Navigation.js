@@ -6,8 +6,8 @@ export default function Navigation() {
     return (
         <div className="navigation">
             <Link to="/">GGWP</Link>
-            <Link>Write</Link>
-            <Link>About</Link>
+            <Link to="/write">Write</Link>
+            <Link to="/about">About</Link>
         </div>
     )
 }

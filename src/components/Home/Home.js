@@ -1,11 +1,10 @@
 import React from 'react';
-import WritingPrompt from '../WritingPrompt/WrtingPrompt'
 
 export default function Home() {
     return (
         <div>
-            <h1>Golden Griffin Writing Prompt</h1>
-            <WritingPrompt />
+            <h1>G.G. Writing Prompt</h1>
+            <p>Welcome to a distraction free writing zone, powered by reddit!</p>
         </div>
     )
 }

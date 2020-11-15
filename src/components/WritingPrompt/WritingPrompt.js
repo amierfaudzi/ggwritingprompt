@@ -4,7 +4,7 @@ import axios from 'axios';
 import './WritingPrompt.scss';
 import { jsPDF } from 'jspdf';
 
-export default function Prompt() {
+export default function WritingPrompt() {
 
     let [fivePrompt, setFivePrompt] = useState(null);
     let [nextPageID, setNextPageID] = useState(null);
@@ -89,12 +89,6 @@ export default function Prompt() {
         prevPage();
     }
 
-    const handleSave = (event) => {
-        event.preventDefault();
-        doc.text("Hello world!", 10, 10);
-        doc.save("prompt.pdf");
-    }
-
     if(fivePrompt) {
         return (
             <div className="writing-prompt">
@@ -102,8 +96,10 @@ export default function Prompt() {
                     if(!data.data.selftext){
                         return (
                             <div key={data.data.id} className="prompt" id={data.data.id}>
-                                <p>The prompts is: {data.data.title.substring(5)}</p>
-                                <Link to={`/${data.data.id}`}>
+                                <p>The prompts is: <span className="prompt__title">"{data.data.title.substring(5)}"</span></p>
+                                <p>Upvotes: {data.data.ups}</p>
+                                <p>Created at: {data.data.created_utc}</p>
+                                <Link to={`/write/${data.data.id}`}>
                                     <button>Write Now</button>
                                 </Link>
                             </div>
@@ -112,7 +108,6 @@ export default function Prompt() {
                 })}
                 <button onClick={handlePrevPage} disabled={prevButtonState}>Previous Page</button>
                 <button onClick={handleNextPage}>Next Page</button>
-                <button onClick={handleSave}>Save as PDF</button>
             </div>
         )
     } else {
