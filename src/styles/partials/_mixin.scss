@@ -41,7 +41,18 @@
         }
 
         &:hover:enabled {
-            border: 2px solid $pink;
+            border: 2px solid $secondary-blue;
+        }
+
+        &--hero {
+            height: 3rem;
+            width: 160px;
+            background-color: green;
+
+            &:hover:enabled {
+                border: 2px solid $secondary-blue;
+                background-color: $green;
+            }
         }
     }
 }
@@ -62,7 +73,7 @@
     background-color: lightgray;
 
     &:focus {
-        border: 2px $pink solid;
+        border: 2px white solid;
     }
 }
 //bottom border

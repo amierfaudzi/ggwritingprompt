@@ -7,8 +7,8 @@ export default function Navigation() {
         <div className="navigation">
             <Link className="link" to="/"><div className="navigation__list">GGWP</div></Link>
             <div className="row-wrapper">
-                <Link className="link" to="/write"><div className="navigation__list">Write</div></Link>
-                <Link className="link" to="/about"><div className="navigation__list">About</div></Link>
+                <Link className="link" to="/write"><div className="navigation__list">WRITE</div></Link>
+                <Link className="link" to="/about"><div className="navigation__list">ABOUT</div></Link>
             </div>
         </div>
     )
