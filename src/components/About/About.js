@@ -13,7 +13,7 @@ export default function About() {
             <div className="header-wrapper">
             <h2 className="about__title">GG Writing Prompt</h2>
             </div>
-            <p className="about__content">I have always loved writing! The world you can conjure and the possibilities are simply endless. Which is what <span className="span span--max" title="Did you see what I did there ;D">prompted</span> me to work on this project in the first place. I created this website using React JS particularly using hooks and I'm proud to say that this website is 100% functional component certified. </p>
+            <p className="about__content">I have always loved writing! The world you can conjure and the possibilities are simply endless. Which was what <span className="span span--max" title="Did you see what I did there ;D">prompted</span> me to work on this project in the first place. Serving the best prompt from the Hot section of <span><a className="subreddit-link" href="https://www.reddit.com/r/WritingPrompts/" target="_blank">r/WritingPrompts</a></span>, you'll be sure to find something that can inspire you. I created this website using React JS particularly using hooks and I'm proud to say that this website is 100% functional component certified. </p>
             <div className="header-wrapper header-wrapper--footer">
                 <h2 className="about__footer">Happy writing!</h2>
             </div>
@@ -33,7 +33,7 @@ export default function About() {
                     <h2 className="about__title">About me</h2>
                 </div>
             <img src={profilePic} alt="profile picture" className="image"/>
-            <p className="about__content">I'm Amier and I'm a Full-Stack Web Developer. I love to build stuff, mechanically and digitally. Follow me on GitHub and/or connect with me on linkedIn!</p>
+            <p className="about__content">I'm Amier and I'm a Full-Stack Web Developer with a background in mechanical engineering. I love to build stuff, mechanically and digitally. Follow me on GitHub and/or connect with me on linkedIn!</p>
             <div className="connect-wrapper">
                 <a href="https://github.com/amierfaudzi" target="_blank">
                     <GitHub className="icon icon--social"/>

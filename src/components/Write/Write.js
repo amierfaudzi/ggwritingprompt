@@ -26,6 +26,7 @@ export default function Write(props) {
     //setting the state during mount
     useEffect(() => {
         getSelectedPrompt();
+        alert("To save your story, fill in your name and email and click the 'SAVE THIS!' button below :D");
     }, [])
     //if english is selected
     const handleEnglish = (event) => {
@@ -117,7 +118,6 @@ export default function Write(props) {
         const email = event.target.email.value;
         window.open(`mailto:${email}?cc=ggwritingprompt@gmail.com&subject=${title}&body=By ${name}: ${story}`);
     }
-
     return (
         <div className="write">
             <h1 className="write__title">Write</h1>
