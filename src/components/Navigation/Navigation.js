@@ -5,9 +5,11 @@ import './Navigation.scss';
 export default function Navigation() {
     return (
         <div className="navigation">
-            <Link to="/">GGWP</Link>
-            <Link to="/write">Write</Link>
-            <Link to="/about">About</Link>
+            <Link className="link" to="/"><div className="navigation__list">GGWP</div></Link>
+            <div className="row-wrapper">
+                <Link className="link" to="/write"><div className="navigation__list">Write</div></Link>
+                <Link className="link" to="/about"><div className="navigation__list">About</div></Link>
+            </div>
         </div>
     )
 }

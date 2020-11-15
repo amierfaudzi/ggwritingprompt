@@ -1,4 +1,33 @@
+//linking dependencies
+@use '../../styles/partials/variable' as *;
+@use '../../styles/partials/mixin' as *;
 .navigation {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    background-color: $secondary-blue;
+
+    &__list {
+        height: 5rem;
+        width: 106px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            width: 160px;
+        }
+
+        &:hover {
+            background-color: $primary-blue;
+        }
+    }
+}
+
+.row-wrapper {
+    display: flex;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
 }
