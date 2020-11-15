@@ -91,6 +91,15 @@ export default function WritingPrompt() {
         prevPage();
     }
 
+    //time converter function
+    const timeConverterFunction = (createdAt) => {
+        //get the actual time 
+        let timeNow = new Date(createdAt*1000);
+        let actualTime = timeNow.toLocaleDateString();
+
+        return actualTime;
+    }
+
     if(fivePrompt) {
         return (
             <div className="writing-prompt">
@@ -102,7 +111,7 @@ export default function WritingPrompt() {
                                     <p className="prompt__content">The prompts: <span className="prompt__title">"{data.data.title.substring(5)}"</span></p>
                                     <div className="ups-date-wrapper">
                                     <p className="extra-info">Upvotes: <Upvote className="icon"/><strong>{data.data.ups}</strong></p>
-                                    <p className="extra-info">Created at: <Time className="icon"/><strong>{data.data.created_utc}</strong></p>
+                                    <p className="extra-info">Created at: <Time className="icon"/><strong>{timeConverterFunction(data.data.created_utc)}</strong></p>
                                     </div>
                                 </div>
                                 <Link to={`/write/${data.data.id}`}>
