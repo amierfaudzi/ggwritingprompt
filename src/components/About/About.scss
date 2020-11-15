@@ -1,0 +1,121 @@
+//linking dependencies
+@use '../../styles/partials/variable' as *;
+@use '../../styles/partials/mixin' as *;
+//about wrapper
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+}
+.about {
+    @include maximum-content-width;
+    margin: 0 auto;
+
+    &__header {
+        margin-bottom: 2rem;
+    }
+    
+    &__card {
+        width: 288px;
+        height: 502px;
+        border: 1px solid $secondary-blue;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+
+        @include desktop {
+            width: 30%;
+            margin-bottom: 1rem;
+        }
+
+        &--me {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--ggwp {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+
+        @include bottom-border;
+    }
+
+    &__footer {
+        padding-top: 1rem;
+    }
+
+    &__content {
+        margin-bottom: 1rem;
+    }
+}
+
+.span--max {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.image {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 70px;
+    margin-bottom: 1rem;
+}
+
+.connect-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    padding-top: 1rem;
+
+    &::after {
+        position: absolute;
+        content: "";
+        border-bottom: $purple 1px solid;
+        width: 100%;
+        bottom: 100%;
+        left: 0;
+    }
+}
+
+.list {
+    background-color: $primary-blue-overlay;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+.header-wrapper {
+    width: 100%;
+
+    &--footer {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            border-bottom: $purple 1px solid;
+            width: 100%;
+            bottom: 100%;
+            left: 0;
+        }
+    }
+}

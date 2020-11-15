@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './WritingPrompt.scss';
 import { jsPDF } from 'jspdf';
-import { ReactComponent as Upvote} from '../../assets/upload-file.svg';
-import { ReactComponent as Time} from '../../assets/clock.svg';
+import { ReactComponent as Upvote} from '../../assets/up.svg';
+import { ReactComponent as Time} from '../../assets/time.svg';
 
 export default function WritingPrompt() {
 
@@ -111,8 +111,8 @@ export default function WritingPrompt() {
                                     <div className="column-wrapper">
                                         <p className="prompt__content">The prompts: <span className="prompt__title">"{data.data.title.substring(5)}"</span></p>
                                         <div className="ups-date-wrapper">
-                                        <p className="extra-info">Upvotes: <Upvote className="icon"/><strong>{data.data.ups}</strong></p>
-                                        <p className="extra-info">Created on: <Time className="icon"/><strong>{timeConverterFunction(data.data.created_utc)}</strong></p>
+                                        <p className="extra-info">Upvotes: <Upvote className="icon icon--special"/><strong>{data.data.ups}</strong></p>
+                                        <p className="extra-info">Created on: <Time className="icon icon--special"/><strong>{timeConverterFunction(data.data.created_utc)}</strong></p>
                                         </div>
                                     </div>
                                 </div>

@@ -79,6 +79,11 @@
     color: black;
     margin-left: .5rem;
     margin-right: .5rem;
+
+    &--social {
+        height: 2rem;
+        width: 2rem;
+    }
 }
 
 .button--page-nav{
@@ -90,4 +95,8 @@
     display: flex;
     justify-content: center;
     flex-grow: 1;
+}
+
+.icon--special {
+    fill: $secondary-blue;
 }
