@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './WritingPrompt.scss';
 import { jsPDF } from 'jspdf';
+import { ReactComponent as Upvote} from '../../assets/upload-file.svg';
+import { ReactComponent as Time} from '../../assets/clock.svg';
 
 export default function WritingPrompt() {
 
@@ -96,18 +98,22 @@ export default function WritingPrompt() {
                     if(!data.data.selftext){
                         return (
                             <div key={data.data.id} className="prompt" id={data.data.id}>
-                                <p>The prompts is: <span className="prompt__title">"{data.data.title.substring(5)}"</span></p>
-                                <p>Upvotes: {data.data.ups}</p>
-                                <p>Created at: {data.data.created_utc}</p>
+                                <div className="column-wrapper">
+                                    <p className="prompt__content">The prompts: <span className="prompt__title">"{data.data.title.substring(5)}"</span></p>
+                                    <div className="ups-date-wrapper">
+                                    <p className="extra-info">Upvotes: <Upvote className="icon"/><strong>{data.data.ups}</strong></p>
+                                    <p className="extra-info">Created at: <Time className="icon"/><strong>{data.data.created_utc}</strong></p>
+                                    </div>
+                                </div>
                                 <Link to={`/write/${data.data.id}`}>
-                                    <button>Write Now</button>
+                                    <button className="button button--write">Write Now</button>
                                 </Link>
                             </div>
                         )
                     }
                 })}
-                <button onClick={handlePrevPage} disabled={prevButtonState}>Previous Page</button>
-                <button onClick={handleNextPage}>Next Page</button>
+                <button className="button button--page-nav" onClick={handlePrevPage} disabled={prevButtonState}>Previous Page</button>
+                <button className="button button--page-nav" onClick={handleNextPage}>Next Page</button>
             </div>
         )
     } else {

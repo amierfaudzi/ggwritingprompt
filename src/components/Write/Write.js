@@ -125,11 +125,6 @@ export default function Write(props) {
                 <p>Your prompt is: <span className="span">"{shownPrompt}"</span></p>
             </div>
             <div className="main-container">
-            <div className="button-container">
-                <button className="button" onClick={handleEnglish} disabled={languageEn}>English</button>
-                <button className="button"onClick={handleMalay} disabled={languageMy}>Malay</button>
-                <button className="button"onClick={handleFrench} disabled={languageFr}>French</button>
-            </div>
             <form className="write-form" onSubmit={handleSubmit}>
                 <input type="text" name="promptTitle" id="" className="write-form__title" placeholder="Your title here"/>
                 <textarea name="promptContent" id="" className="write-form__content" placeholder="Write here"></textarea>
@@ -139,6 +134,11 @@ export default function Write(props) {
                     <button type="submit" className="button">Save this!</button>
                 </div>
             </form>
+            <div className="button-container">
+                <button className="button" onClick={handleEnglish} disabled={languageEn}>English</button>
+                <button className="button"onClick={handleMalay} disabled={languageMy}>Malay</button>
+                <button className="button"onClick={handleFrench} disabled={languageFr}>French</button>
+            </div>
             </div>
         </div>
     )
