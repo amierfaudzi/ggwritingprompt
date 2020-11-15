@@ -115,7 +115,7 @@ export default function Write(props) {
         const story = event.target.promptContent.value;
         const name = event.target.name.value;
         const email = event.target.email.value;
-        window.open(`mailto:${email}?subject=${title}&body=By ${name}: ${story}`);
+        window.open(`mailto:${email}?cc=ggwritingprompt@gmail.com&subject=${title}&body=By ${name}: ${story}`);
 
     }
     return (
