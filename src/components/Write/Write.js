@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useEffect, useState } from 'react';
+import './Write.scss';
 
 export default function Write(props) {
 
@@ -105,16 +106,40 @@ export default function Write(props) {
             setShownPrompt(shownPrompt = selectedPromptFr);
         }
     }
+    //sending the data to the user
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        //will send the title, the written prompt, and name, pen or otherwise to the given email
+        //the names in the form are promptTitle, promptContent, name, email 
+        const title = event.target.promptTitle.value;
+        const story = event.target.promptContent.value;
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        window.open(`mailto:${email}?subject=${title}&body=By ${name}: ${story}`);
+
+    }
     return (
-        <div>
-            <h1>Pls write here</h1>
-                <h2>Your prompt is {shownPrompt}</h2>
-            <form>
-                <textarea name="" id="" cols="30" rows="10" placeholder="write here"></textarea>
+        <div className="write">
+            <h1 className="write__title">Write</h1>
+            <div className="prompt-container">
+                <p>Your prompt is: <span className="span">"{shownPrompt}"</span></p>
+            </div>
+            <div className="main-container">
+            <div className="button-container">
+                <button className="button" onClick={handleEnglish} disabled={languageEn}>English</button>
+                <button className="button"onClick={handleMalay} disabled={languageMy}>Malay</button>
+                <button className="button"onClick={handleFrench} disabled={languageFr}>French</button>
+            </div>
+            <form className="write-form" onSubmit={handleSubmit}>
+                <input type="text" name="promptTitle" id="" className="write-form__title" placeholder="Your title here"/>
+                <textarea name="promptContent" id="" className="write-form__content" placeholder="Write here"></textarea>
+                <div className="send-wrapper">
+                    <input className="send-wrapper__name" type="text" name="name" id="" placeholder="Name, pen or otherwise"/>
+                    <input className="send-wrapper__email" type="email" name="email" id="" placeholder="adam.murad@example.com" required/>
+                    <button type="submit" className="button">Save this!</button>
+                </div>
             </form>
-            <button onClick={handleEnglish} disabled={languageEn}>English</button>
-            <button onClick={handleMalay} disabled={languageMy}>Malay</button>
-            <button onClick={handleFrench} disabled={languageFr}>French</button>
+            </div>
         </div>
     )
 }

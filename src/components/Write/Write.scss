@@ -1,0 +1,64 @@
+//linking dependencies
+@use '../../styles/partials/variable' as *;
+@use '../../styles/partials/mixin' as *;
+
+//including general style
+@include button-style;
+@include span;
+.write {
+    @include maximum-content-width;
+    margin: 0 auto;
+
+    &__title {
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.write-form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+    &__title {
+        @include input;
+    }
+
+    &__content {
+        @include input;
+        height: 12rem;
+        resize: vertical;
+    }
+
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.prompt-container {
+    margin-bottom: 2rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-wrapper {
+    
+    &__name {
+        @include input;
+        margin-right: 2rem;
+    }
+
+    &__email {
+        @include input;
+        margin-right: 2rem;
+    }
+}

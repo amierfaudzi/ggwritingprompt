@@ -24,3 +24,41 @@
         width: 1080px;
     }
 }
+//button general styling
+@mixin button-style {
+    .button {
+        height: 2rem;
+        color: white;
+        width: 104px;
+        background-color: $purple;
+        margin-bottom: 1.5rem;
+        border-radius: 5px;
+        outline: none;
+
+        &:disabled {
+            background-color: $primary-blue;
+        }
+
+        &:hover {
+            border: 2px solid $pink;
+        }
+    }
+}
+//span general style
+@mixin span {
+    .span {
+        font-style: italic;
+    }
+}
+//input general style
+@mixin input {
+    padding: 1rem;
+    border-radius: 5px;
+    outline: none;
+    height: 3rem;
+    margin-bottom: 2rem;
+
+    &:focus {
+        border: 2px $pink solid;
+    }
+}

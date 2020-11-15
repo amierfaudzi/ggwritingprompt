@@ -1,0 +1,17 @@
+//linking dependencies
+@use '../../styles/partials/variable' as *;
+@use '../../styles/partials/mixin' as *;
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 5rem);
+    background-image: url('../../assets/adventure.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero {
+    background-color: $white-overlay;
+}
