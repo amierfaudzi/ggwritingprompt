@@ -13,7 +13,6 @@ export default function WritingPrompt() {
     let [prevPageID, setPrevPageID] = useState(null);
     let [prevPrevPageID, setPrevPrevPageID] = useState([]);
     let [prevButtonState, setPrevButtonState] =useState(true);
-    const doc = new jsPDF();
 
     //getting the prompt at the beginning
     const getPrompt = () => {
