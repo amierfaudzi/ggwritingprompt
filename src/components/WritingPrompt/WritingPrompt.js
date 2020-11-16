@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './WritingPrompt.scss';
-import { jsPDF } from 'jspdf';
 import { ReactComponent as Upvote} from '../../assets/up.svg';
 import { ReactComponent as Time} from '../../assets/time.svg';
 
