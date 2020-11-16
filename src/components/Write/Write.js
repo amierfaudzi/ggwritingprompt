@@ -26,6 +26,9 @@ export default function Write(props) {
     //setting the state during mount
     useEffect(() => {
         getSelectedPrompt();
+        setLanguageEn(languageEn=true);
+        setLanguageMy(languageEn=false);
+        setLanguageFr(languageEn=false); 
         alert("To save your story, fill in your name and email and click the 'SAVE THIS!' button below :D");
     }, [])
     //if english is selected
@@ -37,6 +40,9 @@ export default function Write(props) {
         //change the prompt back to english
         setShownPrompt(shownPrompt = selectedPromptEn);
     }
+    //linngavex api key
+    const LINGAVEX_KEY = process.env.REACT_APP_LINGAVEX_KEY;
+
     //if malay is selected
     const handleMalay = (event) => {
         event.preventDefault();
@@ -46,11 +52,12 @@ export default function Write(props) {
         //check if malay has been selected before then select either get request for malay or change the shown prompt to malay
         if(!selectedPromptMy) {
             //axios request to translate from English to Malay
+            
             axios({
                 method: 'post',
                 url: 'https://lingvanex-translate.p.rapidapi.com/translate',
                 headers: {
-                    "x-rapidapi-key": "7ecda9ef8amsh14c03e5efc0001ep15242fjsne692931f5a36",
+                    "x-rapidapi-key": `${LINGAVEX_KEY}`,
                     "x-rapidapi-host": "lingvanex-translate.p.rapidapi.com",
                     "content-type": "application/json" 
                 },
@@ -62,7 +69,6 @@ export default function Write(props) {
                 }
             })
             .then(res=> {
-                console.log(res.data.result)
                 setSelectedPromptMy(selectedPromptMy=res.data.result);
                 setShownPrompt(shownPrompt = selectedPromptMy);
             })
@@ -85,7 +91,7 @@ export default function Write(props) {
                 method: 'post',
                 url: 'https://lingvanex-translate.p.rapidapi.com/translate',
                 headers: {
-                    "x-rapidapi-key": "7ecda9ef8amsh14c03e5efc0001ep15242fjsne692931f5a36",
+                    "x-rapidapi-key": `${LINGAVEX_KEY}`,
                     "x-rapidapi-host": "lingvanex-translate.p.rapidapi.com",
                     "content-type": "application/json" 
                 },
@@ -97,7 +103,6 @@ export default function Write(props) {
                 }
             })
             .then(res=> {
-                console.log(res.data.result)
                 setSelectedPromptFr(selectedPromptFr=res.data.result);
                 setShownPrompt(shownPrompt = selectedPromptFr);
             })
