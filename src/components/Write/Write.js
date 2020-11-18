@@ -12,12 +12,15 @@ export default function Write(props) {
     let [languageEn, setLanguageEn] = useState(true);
     let [languageMy, setLanguageMy] = useState(false);
     let [languageFr, setLanguageFr] = useState(false);
+    let originalLink = '';
 
     //axios get request of that particular post
     const getSelectedPrompt = () => {
         axios.get(`https://www.reddit.com/by_id/t3_${props.match.params.promptId}.json`)
         .then(res=> {
             setSelectedPromptEn(selectedPromptEn = res.data.data.children[0].data.title.substring(5));
+            console.log(res.data.data.children[0].data.url)
+            originalLink = res.data.data.children[0].data.url;
             //set the shown prompt
             setShownPrompt(shownPrompt = selectedPromptEn);
         })
@@ -121,8 +124,15 @@ export default function Write(props) {
         const story = event.target.promptContent.value;
         const name = event.target.name.value;
         const email = event.target.email.value;
-        window.open(`mailto:${email}?cc=ggwritingprompt@gmail.com&subject=${title}&body=By ${name}: ${story}`);
+        window.open(`mailto:${email}?cc=ggwritingprompt@gmail.com&subject=${title}&body=By ${name} in response to the following prompt: ${shownPrompt}. <<Story>> ${story}`);
+        event.target.reset();
     }
+    //visiting reddit post
+    const handlePortal = (event) => {
+        event.preventDefault();
+        window.open(originalLink)
+    }
+
     return (
         <div className="write">
             <h1 className="write__title">Write</h1>
@@ -139,10 +149,13 @@ export default function Write(props) {
                     <button type="submit" className="button">Save this!</button>
                 </div>
             </form>
+            <div>
             <div className="button-container">
                 <button className="button button--lang" onClick={handleEnglish} disabled={languageEn}>English</button>
                 <button className="button button--lang"onClick={handleMalay} disabled={languageMy}>Malay</button>
                 <button className="button button--lang"onClick={handleFrench} disabled={languageFr}>French</button>
+            </div>
+            <button className="button button--portal" onClick={handlePortal}>The Reddit Post</button>
             </div>
             </div>
         </div>
