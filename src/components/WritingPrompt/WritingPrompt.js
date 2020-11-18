@@ -102,7 +102,7 @@ export default function WritingPrompt() {
         return (
             <div className="writing-prompt">
                 {fivePrompt.children.map((data)=> {
-                    if(data.data.title.slice(0, 4) === '[WP]'){
+                    if(data.data.title.slice(0, 4) === '[WP]' || data.data.title.slice(0, 4) === '[PI]'){
                         return (
                             <div key={data.data.id} className="prompt" id={data.data.id}>
                                 <div className="centering-container">
