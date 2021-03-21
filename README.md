@@ -6,7 +6,7 @@ It takes writing prompt from r/writingprompts and the user are then able to choo
 
 The live site: https://ggwritingprompt.netlify.app/
 
-![Home](ggfrontpage.png)
+![Home](ggfrontpage.PNG)
 
 
 This project was built to explore React hooks and was built during my time in BrainStation web development diploma..
