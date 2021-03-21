@@ -19,7 +19,6 @@ export default function Write(props) {
         axios.get(`https://www.reddit.com/by_id/t3_${props.match.params.promptId}.json`)
         .then(res=> {
             setSelectedPromptEn(selectedPromptEn = res.data.data.children[0].data.title.substring(5));
-            console.log(res.data.data.children[0].data.url)
             originalLink = res.data.data.children[0].data.url;
             //set the shown prompt
             setShownPrompt(shownPrompt = selectedPromptEn);

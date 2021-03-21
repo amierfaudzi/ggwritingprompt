@@ -19,11 +19,9 @@ export default function WritingPrompt() {
         .then(result=>{
             //storing the data from the API
             setFivePrompt(fivePrompt=result.data.data);
-            console.log("new values of five prompts is >>>", fivePrompt);
 
             //saving the page ID to be able to navigate
             setNextPageID(nextPageID = fivePrompt.after)
-            console.log(nextPageID);
         })
         .catch(err=>console.log(err))
     }
@@ -40,11 +38,8 @@ export default function WritingPrompt() {
 
             //saving the page ID to be able to navigate
             setNextPageID(nextPageID = fivePrompt.after)
-            console.log(nextPageID);
         })
         .catch(err=> console.log(err))
-
-        console.log("these are the ID brother", prevPrevPageID, prevPageID, nextPageID)
     }
     //navigation to the previous page
     const prevPage = () => {
@@ -58,11 +53,9 @@ export default function WritingPrompt() {
 
             //saving the page ID to be able to navigate
             setNextPageID(nextPageID = fivePrompt.after)
-            console.log(nextPageID);
         })
         .catch(err=> console.log(err))
 
-        console.log("these are the ID brother", prevPrevPageID, prevPageID, nextPageID)
     }
     
     //similar to componentDidMount for classes to retrieve then data on load
